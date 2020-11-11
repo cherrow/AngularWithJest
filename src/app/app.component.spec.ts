@@ -3,6 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component;
+  let fixture;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -14,15 +16,18 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it(`should have as title 'angular-with-jest'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-with-jest');
+  test('should create the app', () => {
+    expect(component).toBeTruthy();
+    expect(component).toMatchSnapshot();
+  });
+
+  test(`should have as title 'angular-with-jest'`, () => {
+    expect(component.title).toEqual('angular-with-jest');
   });
 });
