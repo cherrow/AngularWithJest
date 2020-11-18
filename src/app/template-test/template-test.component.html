@@ -1,1 +1,11 @@
 <p>template-test works!</p>
+
+<div
+  class="first-dom"
+  *ngIf="showFirstDom || readonly"
+>I am first dom
+</div>
+<input
+ [formControl]="inputControl"
+>
+<span>{{placeholder}}</span>

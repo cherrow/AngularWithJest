@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ServiceTestComponent } from './service-test/service-test.component';
 import { ObservableTestComponent } from './observable-test/observable-test.component';
 import { TemplateTestComponent } from './template-test/template-test.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TemplateTestComponent } from './template-test/template-test.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
