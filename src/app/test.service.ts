@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
+
+  public testSubject$ = new BehaviorSubject<boolean>(false);
 
   constructor() { }
 
